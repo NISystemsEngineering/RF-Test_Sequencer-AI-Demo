@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)\microsoft.extensions.configuration.binder\8.0.2\buildTransitive\netstandard2.0\Microsoft.Extensions.Configuration.Binder.targets" Condition="Exists('$(NuGetPackageRoot)\microsoft.extensions.configuration.binder\8.0.2\buildTransitive\netstandard2.0\Microsoft.Extensions.Configuration.Binder.targets')" />
+    <Import Project="$(NuGetPackageRoot)\ni.discovery.v1.client\9.21.0.983\build\NI.Discovery.V1.Client.targets" Condition="Exists('$(NuGetPackageRoot)\ni.discovery.v1.client\9.21.0.983\build\NI.Discovery.V1.Client.targets')" />
+  </ImportGroup>
+</Project>

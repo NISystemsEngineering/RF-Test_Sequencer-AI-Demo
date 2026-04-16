@@ -1,0 +1,11 @@
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\bin\x64\Release\net48\WlanRfAmpTest.Core.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\bin\x64\Release\net48\WlanRfAmpTest.Core.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\bin\x64\Release\net48\Newtonsoft.Json.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.csproj.AssemblyReference.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.AssemblyInfoInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.AssemblyInfo.cs
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.csproj.CoreCompileInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAm.68CC24D3.Up2Date
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Core\obj\x64\Release\net48\WlanRfAmpTest.Core.pdb

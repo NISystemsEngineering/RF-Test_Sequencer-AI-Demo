@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Kq8VzPenSG8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Chinmoyee\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

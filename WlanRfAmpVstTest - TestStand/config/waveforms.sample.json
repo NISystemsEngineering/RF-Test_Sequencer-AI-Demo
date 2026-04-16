@@ -1,0 +1,14 @@
+{
+  "2.4GHz_802.11ac_20MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/2.4GHz_802.11ac_20MHz.tdms",
+  "2.4GHz_802.11ac_40MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/2.4GHz_802.11ac_40MHz.tdms",
+  "2.4GHz_802.11ac_80MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/2.4GHz_802.11ac_80MHz.tdms",
+  "2.4GHz_802.11ax_20MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/2.4GHz_802.11ax_20MHz.tdms",
+  "2.4GHz_802.11ax_40MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/2.4GHz_802.11ax_40MHz.tdms",
+  "2.4GHz_802.11ax_80MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/2.4GHz_802.11ax_80MHz.tdms",
+  "5GHz_802.11ac_20MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/5GHz_802.11ac_20MHz.tdms",
+  "5GHz_802.11ac_40MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/5GHz_802.11ac_40MHz.tdms",
+  "5GHz_802.11ac_80MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/5GHz_802.11ac_80MHz.tdms",
+  "5GHz_802.11ax_20MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/5GHz_802.11ax_20MHz.tdms",
+  "5GHz_802.11ax_40MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/5GHz_802.11ax_40MHz.tdms",
+  "5GHz_802.11ax_80MHz": "C:/Users/Chinmoyee/Projects/WlanRfAmpVstTest/config/Waveforms/5GHz_802.11ax_80MHz.tdms"
+}

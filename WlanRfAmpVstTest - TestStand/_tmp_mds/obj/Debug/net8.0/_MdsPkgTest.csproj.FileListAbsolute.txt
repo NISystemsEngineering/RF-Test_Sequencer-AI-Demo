@@ -1,0 +1,4 @@
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\_tmp_mds\obj\Debug\net8.0\_MdsPkgTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\_tmp_mds\obj\Debug\net8.0\_MdsPkgTest.AssemblyInfoInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\_tmp_mds\obj\Debug\net8.0\_MdsPkgTest.AssemblyInfo.cs
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\_tmp_mds\obj\Debug\net8.0\_MdsPkgTest.csproj.CoreCompileInputs.cache

@@ -1,0 +1,3733 @@
+<?xml version="1.0" encoding="iso-8859-1" ?><?xml-stylesheet type="text/xsl" href="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\ATML\StyleSheets\tr5_horizontal.xsl"?>
+
+<trc:TestResultsCollection xmlns:trc="urn:IEEE-1636.1:2011:01:TestResultsCollection" xmlns:tr="urn:IEEE-1636.1:2011:01:TestResults" xmlns:c="urn:IEEE-1671:2010:Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ts="www.ni.com/TestStand/ATMLTestResults/2.0">
+<trc:TestResults uuid="0ed430f5-3910-11f1-a3e3-00802f38c2db" xmlns:trc="urn:IEEE-1636.1:2011:01:TestResultsCollection" xmlns:tr="urn:IEEE-1636.1:2011:01:TestResults" xmlns:c="urn:IEEE-1671:2010:Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ts="www.ni.com/TestStand/ATMLTestResults/2.0">
+	<tr:Personnel>
+		<tr:SystemOperator ID = "administrator" name = "administrator"/>
+	</tr:Personnel>
+	<tr:ResultSet ID="3" name = "C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\seq\WlanRfAmpTest_Bundle.seq#MainSequence" startDateTime = "2026-04-15T14:13:35.929" endDateTime = "2026-04-15T14:14:16.523">
+		<tr:Extension>
+			<ts:TSStepProperties>
+				<ts:StepType>SequenceCall</ts:StepType>
+				<ts:StepGroup>Main</ts:StepGroup>
+				<ts:BlockLevel value='0'/>
+				<ts:StepCausedSequenceFailure value='true'/>
+				<ts:Index value='8'/>
+				<ts:TotalTime value='40.5949'/>
+				<ts:ModuleTime value='40.5949'/>
+			</ts:TSStepProperties>
+		</tr:Extension>
+		<tr:Outcome value="Failed" />
+		<tr:SessionAction ID = "4" name = "Prepare WLAN sweep (.NET)" startDateTime = "2026-04-15T14:13:36.080"  endDateTime = "2026-04-15T14:13:36.207"  testReferenceID="ID#:9LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Setup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='1'/>
+					<ts:TotalTime value='0.127178'/>
+					<ts:ModuleTime value='0.12714'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "5" name = "For each band" startDateTime = "2026-04-15T14:13:36.214"  endDateTime = "2026-04-15T14:13:36.215"  testReferenceID="ID#:9rTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BandIdx = 0; Locals.BandIdx < Parameters.Wlan_BandCount; Locals.BandIdx = Locals.BandIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='1'/>
+					<ts:TotalTime value='0.0002214'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "6" name = "For each center frequency" startDateTime = "2026-04-15T14:13:36.220"  endDateTime = "2026-04-15T14:13:36.220"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0001809'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "7" name = "For each WLAN standard" startDateTime = "2026-04-15T14:13:36.221"  endDateTime = "2026-04-15T14:13:36.221"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0001436'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "8" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:13:36.223"  endDateTime = "2026-04-15T14:13:36.223"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0001859'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "9" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:13:36.228"  endDateTime = "2026-04-15T14:13:36.232"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.00402'/>
+					<ts:ModuleTime value='0.0039945'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "10" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:13:36.232"  endDateTime = "2026-04-15T14:13:47.478"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='11.2459'/>
+					<ts:ModuleTime value='11.2454'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430c9-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "11" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:13:47.479"  endDateTime = "2026-04-15T14:13:48.881"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='1.40222'/>
+					<ts:ModuleTime value='1.4021'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430ca-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "12" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:13:48.883"  endDateTime = "2026-04-15T14:13:50.459"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='1.57682'/>
+					<ts:ModuleTime value='1.57664'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430cb-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "13" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:13:50.461"  endDateTime = "2026-04-15T14:13:50.471"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:StepCausedSequenceFailure value='true'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0101514'/>
+					<ts:ModuleTime value='0.0100141'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430cc-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "14" name = "" startDateTime = "2026-04-15T14:13:50.472"  endDateTime = "2026-04-15T14:13:50.472"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='3.39e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "17" name = "" startDateTime = "2026-04-15T14:13:50.480"  endDateTime = "2026-04-15T14:13:50.480"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='5.11e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "20" name = "" startDateTime = "2026-04-15T14:13:50.487"  endDateTime = "2026-04-15T14:13:50.487"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='2.12e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "21" name = "For each center frequency" startDateTime = "2026-04-15T14:13:50.487"  endDateTime = "2026-04-15T14:13:50.488"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{1} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0001242'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "22" name = "For each WLAN standard" startDateTime = "2026-04-15T14:13:50.491"  endDateTime = "2026-04-15T14:13:50.491"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0001126'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "23" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:13:50.492"  endDateTime = "2026-04-15T14:13:50.493"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='8.25e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "24" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:13:50.494"  endDateTime = "2026-04-15T14:13:50.494"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='9.71e-05'/>
+					<ts:ModuleTime value='8.22e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "25" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:13:50.495"  endDateTime = "2026-04-15T14:13:51.395"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.899333'/>
+					<ts:ModuleTime value='0.899246'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430cd-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "26" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:13:51.396"  endDateTime = "2026-04-15T14:13:52.248"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.852057'/>
+					<ts:ModuleTime value='0.851968'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430ce-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "27" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:13:52.249"  endDateTime = "2026-04-15T14:13:53.120"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.87111'/>
+					<ts:ModuleTime value='0.871018'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430cf-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "28" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:13:53.121"  endDateTime = "2026-04-15T14:13:53.121"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0001857'/>
+					<ts:ModuleTime value='0.0001374'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430d0-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "29" name = "" startDateTime = "2026-04-15T14:13:53.123"  endDateTime = "2026-04-15T14:13:53.123"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='1.97e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "32" name = "" startDateTime = "2026-04-15T14:13:53.130"  endDateTime = "2026-04-15T14:13:53.130"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='1.81e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "35" name = "" startDateTime = "2026-04-15T14:13:53.136"  endDateTime = "2026-04-15T14:13:53.136"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='2.13e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "36" name = "For each center frequency" startDateTime = "2026-04-15T14:13:53.137"  endDateTime = "2026-04-15T14:13:53.137"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{2} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0001242'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "37" name = "For each WLAN standard" startDateTime = "2026-04-15T14:13:53.140"  endDateTime = "2026-04-15T14:13:53.140"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0001018'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "38" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:13:53.142"  endDateTime = "2026-04-15T14:13:53.142"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='9.96e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "39" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:13:53.143"  endDateTime = "2026-04-15T14:13:53.144"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='8.16e-05'/>
+					<ts:ModuleTime value='6.5e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "40" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:13:53.145"  endDateTime = "2026-04-15T14:13:53.980"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.834959'/>
+					<ts:ModuleTime value='0.834858'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d1-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "41" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:13:53.981"  endDateTime = "2026-04-15T14:13:54.851"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.870347'/>
+					<ts:ModuleTime value='0.870212'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d2-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "42" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:13:54.853"  endDateTime = "2026-04-15T14:13:55.699"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.845533'/>
+					<ts:ModuleTime value='0.845393'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d3-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "43" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:13:55.700"  endDateTime = "2026-04-15T14:13:55.700"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0002626'/>
+					<ts:ModuleTime value='0.0001812'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430d4-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "44" name = "" startDateTime = "2026-04-15T14:13:55.702"  endDateTime = "2026-04-15T14:13:55.702"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='5.99e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "47" name = "" startDateTime = "2026-04-15T14:13:55.708"  endDateTime = "2026-04-15T14:13:55.708"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='2.17e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "50" name = "" startDateTime = "2026-04-15T14:13:55.716"  endDateTime = "2026-04-15T14:13:55.716"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='4.74e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "51" name = "For each center frequency" startDateTime = "2026-04-15T14:13:55.716"  endDateTime = "2026-04-15T14:13:55.717"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{3} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0003725'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "52" name = "For each WLAN standard" startDateTime = "2026-04-15T14:13:55.720"  endDateTime = "2026-04-15T14:13:55.720"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0003043'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "53" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:13:55.722"  endDateTime = "2026-04-15T14:13:55.722"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.000161'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "54" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:13:55.724"  endDateTime = "2026-04-15T14:13:55.724"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='9.16e-05'/>
+					<ts:ModuleTime value='7.36e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "55" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:13:55.728"  endDateTime = "2026-04-15T14:13:56.629"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.900886'/>
+					<ts:ModuleTime value='0.900757'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d5-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "56" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:13:56.630"  endDateTime = "2026-04-15T14:13:57.488"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.858142'/>
+					<ts:ModuleTime value='0.857998'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d6-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "57" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:13:57.490"  endDateTime = "2026-04-15T14:13:58.340"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.850136'/>
+					<ts:ModuleTime value='0.849996'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d7-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "58" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:13:58.341"  endDateTime = "2026-04-15T14:13:58.342"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0003064'/>
+					<ts:ModuleTime value='0.0002063'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430d8-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "59" name = "" startDateTime = "2026-04-15T14:13:58.343"  endDateTime = "2026-04-15T14:13:58.343"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='4.23e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "62" name = "" startDateTime = "2026-04-15T14:13:58.350"  endDateTime = "2026-04-15T14:13:58.350"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='4.72e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "65" name = "" startDateTime = "2026-04-15T14:13:58.363"  endDateTime = "2026-04-15T14:13:58.363"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='5.12e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "66" name = "For each center frequency" startDateTime = "2026-04-15T14:13:58.364"  endDateTime = "2026-04-15T14:13:58.364"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{4} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0003547'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "67" name = "For each WLAN standard" startDateTime = "2026-04-15T14:13:58.367"  endDateTime = "2026-04-15T14:13:58.368"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0002938'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "68" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:13:58.369"  endDateTime = "2026-04-15T14:13:58.369"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0002704'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "69" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:13:58.370"  endDateTime = "2026-04-15T14:13:58.371"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.0001529'/>
+					<ts:ModuleTime value='0.0001182'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "70" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:13:58.372"  endDateTime = "2026-04-15T14:13:59.234"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.862035'/>
+					<ts:ModuleTime value='0.861894'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430d9-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "71" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:13:59.236"  endDateTime = "2026-04-15T14:14:00.081"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.845212'/>
+					<ts:ModuleTime value='0.845063'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430da-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "72" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:00.083"  endDateTime = "2026-04-15T14:14:00.911"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.828221'/>
+					<ts:ModuleTime value='0.828073'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430db-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "73" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:00.913"  endDateTime = "2026-04-15T14:14:00.914"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0003166'/>
+					<ts:ModuleTime value='0.0002141'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430dc-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "74" name = "" startDateTime = "2026-04-15T14:14:00.919"  endDateTime = "2026-04-15T14:14:00.919"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='5.49e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "77" name = "" startDateTime = "2026-04-15T14:14:00.927"  endDateTime = "2026-04-15T14:14:00.927"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='4.36e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "80" name = "" startDateTime = "2026-04-15T14:14:00.934"  endDateTime = "2026-04-15T14:14:00.934"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='4.29e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "81" name = "For each center frequency" startDateTime = "2026-04-15T14:14:00.935"  endDateTime = "2026-04-15T14:14:00.935"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{5} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0002979'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "82" name = "For each WLAN standard" startDateTime = "2026-04-15T14:14:00.939"  endDateTime = "2026-04-15T14:14:00.939"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0003159'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "83" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:14:00.940"  endDateTime = "2026-04-15T14:14:00.941"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0002446'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "84" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:14:00.942"  endDateTime = "2026-04-15T14:14:00.942"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.0001218'/>
+					<ts:ModuleTime value='9.72e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "85" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:14:00.943"  endDateTime = "2026-04-15T14:14:01.780"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.836412'/>
+					<ts:ModuleTime value='0.836316'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430dd-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "86" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:14:01.781"  endDateTime = "2026-04-15T14:14:02.635"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.85447'/>
+					<ts:ModuleTime value='0.854363'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430de-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "87" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:02.636"  endDateTime = "2026-04-15T14:14:03.489"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.852092'/>
+					<ts:ModuleTime value='0.851948'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430df-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "88" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:03.490"  endDateTime = "2026-04-15T14:14:03.490"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0002965'/>
+					<ts:ModuleTime value='0.000204'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430e0-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "89" name = "" startDateTime = "2026-04-15T14:14:03.492"  endDateTime = "2026-04-15T14:14:03.492"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='3.13e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "92" name = "" startDateTime = "2026-04-15T14:14:03.499"  endDateTime = "2026-04-15T14:14:03.499"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='4.2e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "95" name = "" startDateTime = "2026-04-15T14:14:03.506"  endDateTime = "2026-04-15T14:14:03.506"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='2.62e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "96" name = "For each center frequency" startDateTime = "2026-04-15T14:14:03.507"  endDateTime = "2026-04-15T14:14:03.507"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{6} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0003555'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "97" name = "For each WLAN standard" startDateTime = "2026-04-15T14:14:03.510"  endDateTime = "2026-04-15T14:14:03.510"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0002291'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "98" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:14:03.512"  endDateTime = "2026-04-15T14:14:03.512"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0002284'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "99" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:14:03.513"  endDateTime = "2026-04-15T14:14:03.513"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.0001105'/>
+					<ts:ModuleTime value='9.08e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "100" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:14:03.515"  endDateTime = "2026-04-15T14:14:04.375"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.860166'/>
+					<ts:ModuleTime value='0.860022'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e1-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "101" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:14:04.377"  endDateTime = "2026-04-15T14:14:05.268"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.891686'/>
+					<ts:ModuleTime value='0.891567'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e2-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "102" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:05.270"  endDateTime = "2026-04-15T14:14:06.129"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.85905'/>
+					<ts:ModuleTime value='0.858893'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e3-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "103" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:06.130"  endDateTime = "2026-04-15T14:14:06.131"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0003334'/>
+					<ts:ModuleTime value='0.0002304'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430e4-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "104" name = "" startDateTime = "2026-04-15T14:14:06.132"  endDateTime = "2026-04-15T14:14:06.132"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='3.09e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "107" name = "" startDateTime = "2026-04-15T14:14:06.140"  endDateTime = "2026-04-15T14:14:06.140"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='2.61e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "110" name = "" startDateTime = "2026-04-15T14:14:06.146"  endDateTime = "2026-04-15T14:14:06.146"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='2.21e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "111" name = "For each center frequency" startDateTime = "2026-04-15T14:14:06.147"  endDateTime = "2026-04-15T14:14:06.147"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{7} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0001238'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "112" name = "For each WLAN standard" startDateTime = "2026-04-15T14:14:06.150"  endDateTime = "2026-04-15T14:14:06.150"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0001031'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "113" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:14:06.152"  endDateTime = "2026-04-15T14:14:06.152"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0001037'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "114" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:14:06.153"  endDateTime = "2026-04-15T14:14:06.153"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='8.58e-05'/>
+					<ts:ModuleTime value='6.65e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "115" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:14:06.155"  endDateTime = "2026-04-15T14:14:07.011"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.855802'/>
+					<ts:ModuleTime value='0.855719'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e5-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "116" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:14:07.012"  endDateTime = "2026-04-15T14:14:07.885"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.873696'/>
+					<ts:ModuleTime value='0.873573'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e6-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "117" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:07.887"  endDateTime = "2026-04-15T14:14:08.749"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.862349'/>
+					<ts:ModuleTime value='0.862225'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e7-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "118" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:08.750"  endDateTime = "2026-04-15T14:14:08.750"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0003177'/>
+					<ts:ModuleTime value='0.000216'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430e8-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "119" name = "" startDateTime = "2026-04-15T14:14:08.752"  endDateTime = "2026-04-15T14:14:08.752"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='5.42e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "122" name = "" startDateTime = "2026-04-15T14:14:08.759"  endDateTime = "2026-04-15T14:14:08.759"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='2.89e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "125" name = "" startDateTime = "2026-04-15T14:14:08.768"  endDateTime = "2026-04-15T14:14:08.768"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='2.34e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "126" name = "For each center frequency" startDateTime = "2026-04-15T14:14:08.769"  endDateTime = "2026-04-15T14:14:08.769"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{8} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0001439'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "127" name = "For each WLAN standard" startDateTime = "2026-04-15T14:14:08.773"  endDateTime = "2026-04-15T14:14:08.774"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0001049'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "128" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:14:08.776"  endDateTime = "2026-04-15T14:14:08.776"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0001045'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "129" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:14:08.781"  endDateTime = "2026-04-15T14:14:08.781"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='9.9e-05'/>
+					<ts:ModuleTime value='8.06e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "130" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:14:08.782"  endDateTime = "2026-04-15T14:14:09.627"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.844279'/>
+					<ts:ModuleTime value='0.844155'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430e9-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "131" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:14:09.628"  endDateTime = "2026-04-15T14:14:10.464"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.835728'/>
+					<ts:ModuleTime value='0.835577'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430ea-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "132" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:10.466"  endDateTime = "2026-04-15T14:14:11.338"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.872649'/>
+					<ts:ModuleTime value='0.8725'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430eb-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "133" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:11.340"  endDateTime = "2026-04-15T14:14:11.340"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0001793'/>
+					<ts:ModuleTime value='0.0001263'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430ec-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "134" name = "" startDateTime = "2026-04-15T14:14:11.342"  endDateTime = "2026-04-15T14:14:11.342"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='5.4e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "137" name = "" startDateTime = "2026-04-15T14:14:11.350"  endDateTime = "2026-04-15T14:14:11.350"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='2.53e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "140" name = "" startDateTime = "2026-04-15T14:14:11.357"  endDateTime = "2026-04-15T14:14:11.357"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='2.31e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "141" name = "For each center frequency" startDateTime = "2026-04-15T14:14:11.358"  endDateTime = "2026-04-15T14:14:11.358"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{9} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0001281'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "142" name = "For each WLAN standard" startDateTime = "2026-04-15T14:14:11.361"  endDateTime = "2026-04-15T14:14:11.361"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0001083'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "143" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:14:11.363"  endDateTime = "2026-04-15T14:14:11.363"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0001576'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "144" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:14:11.365"  endDateTime = "2026-04-15T14:14:11.365"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='9.5e-05'/>
+					<ts:ModuleTime value='7.66e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "145" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:14:11.366"  endDateTime = "2026-04-15T14:14:12.203"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.836629'/>
+					<ts:ModuleTime value='0.836533'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430ed-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "146" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:14:12.204"  endDateTime = "2026-04-15T14:14:13.079"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.874753'/>
+					<ts:ModuleTime value='0.874663'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430ee-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "147" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:13.080"  endDateTime = "2026-04-15T14:14:13.907"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.827375'/>
+					<ts:ModuleTime value='0.827245'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430ef-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "148" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:13.908"  endDateTime = "2026-04-15T14:14:13.908"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.00031'/>
+					<ts:ModuleTime value='0.0002102'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430f0-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "149" name = "" startDateTime = "2026-04-15T14:14:13.910"  endDateTime = "2026-04-15T14:14:13.910"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='5.84e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "152" name = "" startDateTime = "2026-04-15T14:14:13.916"  endDateTime = "2026-04-15T14:14:13.916"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='4.33e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "155" name = "" startDateTime = "2026-04-15T14:14:13.931"  endDateTime = "2026-04-15T14:14:13.931"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='4.87e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "156" name = "For each center frequency" startDateTime = "2026-04-15T14:14:13.932"  endDateTime = "2026-04-15T14:14:13.932"  testReferenceID="ID#:97Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{10} Locals.FreqIdx = 0; Locals.FreqIdx < (Locals.BandIdx == 0 ? Parameters.Wlan_FreqCountBand0 : Parameters.Wlan_FreqCountBand1); Locals.FreqIdx = Locals.FreqIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0003585'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "157" name = "For each WLAN standard" startDateTime = "2026-04-15T14:14:13.936"  endDateTime = "2026-04-15T14:14:13.937"  testReferenceID="ID#:+LTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.StdIdx = 0; Locals.StdIdx < Parameters.Wlan_StdCount; Locals.StdIdx = Locals.StdIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.0003035'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "158" name = "For each channel bandwidth" startDateTime = "2026-04-15T14:14:13.938"  endDateTime = "2026-04-15T14:14:13.938"  testReferenceID="ID#:+bTx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value><![CDATA[{0} Locals.BwIdx = 0; Locals.BwIdx < Parameters.Wlan_BwCount; Locals.BwIdx = Locals.BwIdx + 1]]></c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_For</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0002995'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "159" name = "Sync point from loop indices (.NET)" startDateTime = "2026-04-15T14:14:13.940"  endDateTime = "2026-04-15T14:14:13.940"  testReferenceID="ID#:+rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.0001086'/>
+					<ts:ModuleTime value='8.55e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "160" name = "Measure EVM (.NET)" startDateTime = "2026-04-15T14:14:13.941"  endDateTime = "2026-04-15T14:14:14.790"  testReferenceID="ID#:+7Tx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.849296'/>
+					<ts:ModuleTime value='0.849164'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430f1-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-200" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-200" xsi:type="c:double" />
+									<ts:High value = "100" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "161" name = "Measure TxP (.NET)" startDateTime = "2026-04-15T14:14:14.791"  endDateTime = "2026-04-15T14:14:15.626"  testReferenceID="ID#:/LTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.834715'/>
+					<ts:ModuleTime value='0.834562'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430f2-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dBm" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dBm" value = "-150" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dBm" value = "80" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-150" xsi:type="c:double" />
+									<ts:High value = "80" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "162" name = "Measure SEM (.NET)" startDateTime = "2026-04-15T14:14:15.627"  endDateTime = "2026-04-15T14:14:16.478"  testReferenceID="ID#:/bTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.850575'/>
+					<ts:ModuleTime value='0.850443'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-0ed430f3-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" nonStandardUnit="dB" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "dB" value = "-500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "dB" value = "500" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "-500" xsi:type="c:double" />
+									<ts:High value = "500" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "163" name = "Log point to CSV — aggregate pass (.NET)" startDateTime = "2026-04-15T14:14:16.479"  endDateTime = "2026-04-15T14:14:16.479"  testReferenceID="ID#:/rTx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='4'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0002366'/>
+					<ts:ModuleTime value='0.0001634'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Failed" />
+			<tr:TestResult ID = "tr-0ed430f4-3910-11f1-a3e3-00802f38c2db" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum value = "0.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum value = "1.5" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.5" xsi:type="c:double" />
+									<ts:High value = "1.5" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "164" name = "" startDateTime = "2026-04-15T14:14:16.480"  endDateTime = "2026-04-15T14:14:16.481"  testReferenceID="ID#:/7Tx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each channel bandwidth)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='3'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='4.11e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "167" name = "" startDateTime = "2026-04-15T14:14:16.487"  endDateTime = "2026-04-15T14:14:16.487"  testReferenceID="ID#:ALXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each WLAN standard)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='2'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='4.48e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "170" name = "" startDateTime = "2026-04-15T14:14:16.493"  endDateTime = "2026-04-15T14:14:16.493"  testReferenceID="ID#:AbXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each center frequency)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='1.85e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "173" name = "" startDateTime = "2026-04-15T14:14:16.503"  endDateTime = "2026-04-15T14:14:16.503"  testReferenceID="ID#:ArXx4A858RGj4wCALzjC2D">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(For each band)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='13'/>
+					<ts:TotalTime value='4.94e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "176" name = "Finish WLAN sweep (.NET)" startDateTime = "2026-04-15T14:14:16.517"  endDateTime = "2026-04-15T14:14:16.518"  testReferenceID="ID#:BLXx4A858RGj4wCALzjC2D">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Cleanup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='1'/>
+					<ts:TotalTime value='0.0005489'/>
+					<ts:ModuleTime value='0.0005223'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+	</tr:ResultSet>
+	<tr:TestProgram>
+		<c:SerialNumber>
+			FAE-SOCAL
+		</c:SerialNumber>
+		<tr:Configuration>
+			<c:Collection xsi:type="ts:TS_Collection" flags = "0x0000">
+				<c:Item name = "IncludeTSExtensionElements">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeAttributes">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeLimits">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeMeasurements">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeArrayMeasurement">
+					<c:Datum value = "2" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ArrayMeasurementFilter">
+					<c:Datum value = "3" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ArrayMeasurementMax">
+					<c:Datum value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeTimes">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "Format">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>xml</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "NumericFormat">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>%$.13g</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ResultFilterExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>True</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "GeneratePath">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseTemporaryFile">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseSequenceFileNameAsPrefix">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "AddTimeAndDateToFileName">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachUUT">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ForceFileNameToBeUnique">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "AppendToFileIfItExists">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "DirectoryType">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>SequenceFileDirectory</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "Directory">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "BaseName">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>Report</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "UseFormatForExtension">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "Extension">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFilePath">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "DisableReportGeneration">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeStepResults">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "BodyGenerator">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>DLL</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "SaveTransformedHtmlForXmlReport">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "Colors">
+					<c:Collection xsi:type="ts:TS_Collection" flags = "0x0000">
+						<c:Item name = "LabelBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFFFFF</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "ValueBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#32FFFF</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "UUTSeparator">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#0000E0</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "HeaderSeparator">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#8000CC</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "TableBorder">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#000000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "MainBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00C4C4</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "SetupBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF8000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "CleanupBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#ADD8E6</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "ReportTextBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF32CC</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Terminated">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#000080</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Failed">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Error">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Passed">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#008000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Skipped">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#B98028</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Done">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#008000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Running">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFCC33</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "TerminatedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#0000FF</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "FailedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "ErrorBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "PassedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00FF00</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "SkippedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFFF00</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "DoneBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00FFCC</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "RunningBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFCC33</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "FailureStackLabelBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF2020</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "FailureStackValueBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#D0D0D0</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "BatchHeadingBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00C4C4</c:Value>
+							</c:Datum>
+						</c:Item>
+					</c:Collection>
+				</c:Item>
+				<c:Item name = "DateAndTimeFormat">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>TimeFirst</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachBatch">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "NewBatchFileNameForEachBatch">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachTestSocket">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "StoreUUTReportWithBatchReport">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "BatchBaseName">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>BatchReport</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "LabelSize">
+					<c:Datum value = "26" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "RelStylesheetPath">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>tr5_horizontal.xsl</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "StylesheetPath">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\ATML\StyleSheets\tr5_horizontal.xsl</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "StylesheetMRU">
+					<c:IndexedArray dimensions="[5]" lowerBounds="[0]" upperBounds="[4]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>report.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value>expand.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[3]">
+							<c:Value></c:Value>
+						</ts:Element>
+						<ts:Element position ="[4]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+				<c:Item name = "ATMLStylesheetMRU">
+					<c:IndexedArray dimensions="[3]" lowerBounds="[0]" upperBounds="[2]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>TR_horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>trml.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+				<c:Item name = "StoreStylesheetAbsolutePath">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseOnTheFlyReporting">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "PurgeOnTheFlyResults">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "GeneratePDFReport">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeStepResultComments">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseLocalizedDecimalPoint">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ReportStyle">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>atml5</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFileSequentialModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_Report[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFileParallelModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_Report[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFileBatchModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_BatchReport[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "BatchFileBatchModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_BatchReport[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachUUTStatus">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ReportPathMacroListString">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "BatchReportPathMacroListString">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "CheckIfMacroListIsUnchanged">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ATML5StylesheetMRU">
+					<c:IndexedArray dimensions="[5]" lowerBounds="[0]" upperBounds="[4]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>tr5_horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>tr5_report.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value>tr5_expand.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[3]">
+							<c:Value></c:Value>
+						</ts:Element>
+						<ts:Element position ="[4]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+				<c:Item name = "Atml_Rpt_Options">
+					<c:Collection xsi:type="ts:TS_Collection" flags = "0x0000">
+						<c:Item name = "AddReportText">
+							<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+						</c:Item>
+						<c:Item name = "ExtensionDLLAbsolutePath">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value></c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "TestResultsSchemaPath">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value></c:Value>
+							</c:Datum>
+						</c:Item>
+					</c:Collection>
+				</c:Item>
+				<c:Item name = "ATML6StylesheetMRU">
+					<c:IndexedArray dimensions="[5]" lowerBounds="[0]" upperBounds="[4]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>tr6_horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>tr6_report.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value>tr6_expand.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[3]">
+							<c:Value></c:Value>
+						</ts:Element>
+						<ts:Element position ="[4]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+			</c:Collection>
+		</tr:Configuration>
+	</tr:TestProgram>
+	<tr:TestStation>
+		<c:SerialNumber>FAE-SOCAL</c:SerialNumber>
+	</tr:TestStation>
+	<tr:UUT>
+		<c:SerialNumber>NONE</c:SerialNumber>
+	</tr:UUT>
+	<tr:Extension>
+		<ts:TSResultSetProperties>
+			<ts:NumOfResults value = '125'/>
+			<ts:CriticalFailureStack>
+				<ts:CriticalFailureStackEntry resultID="13" stepName="Log point to CSV — aggregate pass (.NET)" sequenceName="MainSequence" sequenceFileName="WlanRfAmpTest_Bundle.seq"/>
+			</ts:CriticalFailureStack>
+		</ts:TSResultSetProperties>
+	</tr:Extension>
+</trc:TestResults>
+</trc:TestResultsCollection>

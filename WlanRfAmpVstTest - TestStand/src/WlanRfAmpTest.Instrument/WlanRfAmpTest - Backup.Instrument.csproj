@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>WlanRfAmpTest.Instrument</RootNamespace>
+    <AssemblyName>WlanRfAmpTest.Instrument</AssemblyName>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseWindowsForms>false</UseWindowsForms>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WlanRfAmpTest.Core\WlanRfAmpTest.Core.csproj" />
+  </ItemGroup>
+  <!--
+    Hint paths: Directory.Build.props (Measurement Studio Current per RFSG RFSGPB example; IVI for RFmx/RFSG).
+    RFmxWlanOfdmModAcc shipping example uses empty HintPath (GAC); we use the same folders NI installs to disk.
+  -->
+  <ItemGroup>
+    <Reference Include="Ivi.Driver">
+      <HintPath>$(NIAssembliesRoot)\Ivi.Driver.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.Common">
+      <HintPath>$(NICommonDllFullPath)</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.ModularInstruments.Common">
+      <HintPath>$(NIAssembliesRoot)\NationalInstruments.ModularInstruments.Common.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.ModularInstruments.NIRfsg.Fx40">
+      <HintPath>$(NIAssembliesRoot)\NationalInstruments.ModularInstruments.NIRfsg.Fx40.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40">
+      <HintPath>$(NIAssembliesRoot)\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.RFmx.InstrMX.Fx40">
+      <HintPath>$(NIAssembliesRoot)\NationalInstruments.RFmx.InstrMX.Fx40.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.RFmx.WlanMX.Fx40">
+      <HintPath>$(NIAssembliesRoot)\NationalInstruments.RFmx.WlanMX.Fx40.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

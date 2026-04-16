@@ -1,0 +1,311 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.instrument\\evmonlymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|solutionrelative:src\\wlanrfamptest.instrument\\evmonlymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.sequencer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|solutionrelative:src\\wlanrfamptest.sequencer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.sequencer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|solutionrelative:src\\wlanrfamptest.sequencer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.sequencer\\sequencerengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|solutionrelative:src\\wlanrfamptest.sequencer\\sequencerengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.instrument\\wlanmeasurementorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|solutionrelative:src\\wlanrfamptest.instrument\\wlanmeasurementorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\wlanrfamptest.modulerunner\\mainform.instrumentconfigui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|solutionrelative:src\\wlanrfamptest.modulerunner\\mainform.instrumentconfigui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\wlanrfamptest.modulerunner\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|solutionrelative:src\\wlanrfamptest.modulerunner\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.modulerunner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|solutionrelative:src\\wlanrfamptest.modulerunner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.sequencer\\wlanrfamptest.sequencer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|solutionrelative:src\\wlanrfamptest.sequencer\\wlanrfamptest.sequencer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.instrument\\wlanteststandsequencer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|solutionrelative:src\\wlanrfamptest.instrument\\wlanteststandsequencer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.sequencer\\teststandsequencefilefactory.bundle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|solutionrelative:src\\wlanrfamptest.sequencer\\teststandsequencefilefactory.bundle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.instrument\\wlanrfinstrumentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|solutionrelative:src\\wlanrfamptest.instrument\\wlanrfinstrumentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.instrument\\rfsgplaybackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|solutionrelative:src\\wlanrfamptest.instrument\\rfsgplaybackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.instrument\\txponlymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4A0FA6D-A7CE-41CD-99E2-CA4C775463EF}|src\\WlanRfAmpTest.Instrument\\WlanRfAmpTest.Instrument.csproj|solutionrelative:src\\wlanrfamptest.instrument\\txponlymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.modulerunner\\uitheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|solutionrelative:src\\wlanrfamptest.modulerunner\\uitheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D2A9BA6-AA9D-4C55-B8F9-55A06F19FE09}|src\\WlanRfAmpTest.Launcher\\WlanRfAmpTest.Launcher.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.launcher\\exelocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D2A9BA6-AA9D-4C55-B8F9-55A06F19FE09}|src\\WlanRfAmpTest.Launcher\\WlanRfAmpTest.Launcher.csproj|solutionrelative:src\\wlanrfamptest.launcher\\exelocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.modulerunner\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBFFEBE3-B769-4B96-9927-A9F8ED83D1B4}|src\\WlanRfAmpTest.ModuleRunner\\WlanRfAmpTest.ModuleRunner.csproj|solutionrelative:src\\wlanrfamptest.modulerunner\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|c:\\users\\chinmoyee\\projects\\wlanrfampvsttest - teststand\\src\\wlanrfamptest.sequencer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55E8F84-0F88-4F68-BCCA-E067209C8507}|src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj|solutionrelative:src\\wlanrfamptest.sequencer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\Program.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Sequencer\\Program.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\Program.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Sequencer\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T21:20:00.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\MainForm.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Sequencer\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\MainForm.cs [Design]",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Sequencer\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T21:19:59.032Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TxpOnlyModule.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\TxpOnlyModule.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Instrument\\TxpOnlyModule.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\TxpOnlyModule.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Instrument\\TxpOnlyModule.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T00:25:01.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\Program.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.ModuleRunner\\Program.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\Program.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.ModuleRunner\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAA+wAYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T00:24:01.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WlanMeasurementOrchestrator.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanMeasurementOrchestrator.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Instrument\\WlanMeasurementOrchestrator.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanMeasurementOrchestrator.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Instrument\\WlanMeasurementOrchestrator.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAwwCsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T22:12:24.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EvmOnlyModule.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\EvmOnlyModule.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Instrument\\EvmOnlyModule.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\EvmOnlyModule.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Instrument\\EvmOnlyModule.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwCgAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T00:12:51.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SequencerEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\SequencerEngine.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Sequencer\\SequencerEngine.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\SequencerEngine.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Sequencer\\SequencerEngine.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBgAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T17:36:27.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs [Design]",
+              "RelativeToolTip": "src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T20:57:14.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.InstrumentConfigUi.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\MainForm.InstrumentConfigUi.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.ModuleRunner\\MainForm.InstrumentConfigUi.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\MainForm.InstrumentConfigUi.cs [Design]",
+              "RelativeToolTip": "src\\WlanRfAmpTest.ModuleRunner\\MainForm.InstrumentConfigUi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T20:57:16.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RfsgPlaybackController.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\RfsgPlaybackController.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Instrument\\RfsgPlaybackController.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\RfsgPlaybackController.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Instrument\\RfsgPlaybackController.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:45:42.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WlanRfInstrumentConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanRfInstrumentConfig.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Instrument\\WlanRfInstrumentConfig.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanRfInstrumentConfig.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Instrument\\WlanRfInstrumentConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:45:44.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WlanTestStandSequencer.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanTestStandSequencer.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Instrument\\WlanTestStandSequencer.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Instrument\\WlanTestStandSequencer.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Instrument\\WlanTestStandSequencer.cs",
+              "ViewState": "AQIAAAYBAAAAAAAAAAAuwHsAAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T22:07:49.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UiTheme.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\UiTheme.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.ModuleRunner\\UiTheme.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\UiTheme.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.ModuleRunner\\UiTheme.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T00:23:56.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WlanRfAmpTest.Sequencer.csproj",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Sequencer\\WlanRfAmpTest.Sequencer.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-09T00:23:55.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TestStandSequenceFileFactory.Bundle.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\TestStandSequenceFileFactory.Bundle.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Sequencer\\TestStandSequenceFileFactory.Bundle.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\TestStandSequenceFileFactory.Bundle.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Sequencer\\TestStandSequenceFileFactory.Bundle.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAAAIkAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:30:30.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ExeLocator.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Launcher\\ExeLocator.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Launcher\\ExeLocator.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Launcher\\ExeLocator.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Launcher\\ExeLocator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T22:16:13.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\MainForm.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.Sequencer\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Sequencer\\MainForm.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.Sequencer\\MainForm.cs",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAwwLQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T22:14:31.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs",
+              "RelativeDocumentMoniker": "src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs",
+              "RelativeToolTip": "src\\WlanRfAmpTest.ModuleRunner\\MainForm.cs",
+              "ViewState": "AQIAAA4BAAAAAAAAAAAwwBsBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T22:13:40.274Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

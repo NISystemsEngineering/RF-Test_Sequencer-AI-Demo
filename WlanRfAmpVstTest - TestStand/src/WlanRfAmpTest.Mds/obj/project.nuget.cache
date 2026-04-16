@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "dgSpecHash": "9izosQ9IbqA=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\microsoft.extensions.configuration.binder\\8.0.2\\microsoft.extensions.configuration.binder.8.0.2.nupkg.sha512",
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\ni.discovery.v1.client\\9.21.0.983\\ni.discovery.v1.client.9.21.0.983.nupkg.sha512",
+    "C:\\Users\\Chinmoyee\\AppData\\Local\\Temp\\cursor-sandbox-cache\\25008d8f9072a7b7bd9d79656cc2a5a1\\nuget\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1102",
+      "level": "Error",
+      "message": "Unable to find package NI.Measurements.Data.V1.Api with version (>= 9.20.0)\r\n  - Found 1 version(s) in NI-Measurement-Data-Services [ Nearest version: 9.20.0-ci.2603301712 ]\r\n  - Found 0 version(s) in Microsoft Visual Studio Offline Packages\r\n  - Found 0 version(s) in nuget.org",
+      "projectPath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "filePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "libraryId": "NI.Measurements.Data.V1.Api",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1102",
+      "level": "Error",
+      "message": "Unable to find package NI.Measurements.Metadata.V1.Api with version (>= 9.20.0)\r\n  - Found 1 version(s) in NI-Measurement-Data-Services [ Nearest version: 9.20.0-ci.2603301712 ]\r\n  - Found 0 version(s) in Microsoft Visual Studio Offline Packages\r\n  - Found 0 version(s) in nuget.org",
+      "projectPath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "filePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "libraryId": "NI.Measurements.Metadata.V1.Api",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package NationalInstruments.Api.Extensions. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, NI-Measurement-Data-Services, nuget.org",
+      "projectPath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "filePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "libraryId": "NationalInstruments.Api.Extensions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package NI.Discovery.V1.Api. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, NI-Measurement-Data-Services, nuget.org",
+      "projectPath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "filePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "libraryId": "NI.Discovery.V1.Api",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Newtonsoft.Json from 13.0.4 to 13.0.3. Reference the package directly from the project to select a different version. \r\n WlanRfAmpTest.Mds -> NI.Discovery.V1.Client 9.21.0.983 -> Newtonsoft.Json (>= 13.0.4) \r\n WlanRfAmpTest.Mds -> Newtonsoft.Json (>= 13.0.3)",
+      "projectPath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "filePath": "C:\\Users\\Chinmoyee\\Projects\\WlanRfAmpVstTest - TestStand\\src\\WlanRfAmpTest.Mds\\WlanRfAmpTest.Mds.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

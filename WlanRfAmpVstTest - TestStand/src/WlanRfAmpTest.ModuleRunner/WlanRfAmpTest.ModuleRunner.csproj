@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+
+    <OutputType>WinExe</OutputType>
+
+    <TargetFramework>net48</TargetFramework>
+
+    <UseWindowsForms>true</UseWindowsForms>
+
+    <ImplicitUsings>disable</ImplicitUsings>
+
+    <RootNamespace>WlanRfAmpTest.ModuleRunner</RootNamespace>
+
+    <AssemblyName>WlanRfAmpTest.ModuleRunner</AssemblyName>
+
+    <Platforms>x64</Platforms>
+
+    <PlatformTarget>x64</PlatformTarget>
+
+    <Nullable>disable</Nullable>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <ProjectReference Include="..\WlanRfAmpTest.Core\WlanRfAmpTest.Core.csproj" />
+
+    <ProjectReference Include="..\WlanRfAmpTest.Instrument\WlanRfAmpTest.Instrument.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+
+  </ItemGroup>
+
+</Project>
+

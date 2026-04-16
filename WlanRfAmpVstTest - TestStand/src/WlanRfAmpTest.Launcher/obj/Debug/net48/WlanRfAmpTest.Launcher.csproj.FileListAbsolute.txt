@@ -1,0 +1,11 @@
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\Debug\net48\WlanRfAmpTest.Launcher.exe.config
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\Debug\net48\WlanRfAmpTest.Launcher.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\Debug\net48\WlanRfAmpTest.Launcher.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.csproj.AssemblyReference.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.AssemblyInfoInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.AssemblyInfo.cs
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\Debug\net48\WlanRfAmpTest.Launcher.exe.config

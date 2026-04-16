@@ -1,0 +1,52 @@
+﻿<Project>
+  <PropertyGroup>
+    <!-- C# 9: works in VS 2019 16.8+ and VS 2022 -->
+    <LangVersion>9.0</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+
+  <!--
+    NI shipping examples under Public Documents use:
+      - RFSG Playback: explicit path to NationalInstruments.Common under
+        %ProgramFiles(x86)%\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current\
+        (see RFSGPBGenerateWfmFromFileMarker.csproj)
+      - RFmx WLAN (e.g. RFmxWlanOfdmModAcc): empty HintPath (assemblies resolved from GAC / IVI install).
+
+    On-disk layouts used here (first folder that contains the marker DLL wins):
+      1) Measurement Studio "Current" (VS2010 path from NI RFSG example; newer VS year folders optional)
+      2) IVI .NET 4.0 (NI 16.0+ IVI compliance)
+      3) Legacy National Instruments\Assemblies\DotNET40
+
+    Override: NIAssembliesRoot, and/or NICommonDllFullPath for NationalInstruments.Common only.
+  -->
+  <PropertyGroup>
+    <_NIMeasurementStudioVs2010Current>$(MSBuildProgramFiles32)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current</_NIMeasurementStudioVs2010Current>
+    <_NIMeasurementStudioVs2019Current>$(MSBuildProgramFiles32)\National Instruments\MeasurementStudioVS2019\DotNET\Assemblies\Current</_NIMeasurementStudioVs2019Current>
+    <_NIMeasurementStudioVs2022Current>$(MSBuildProgramFiles32)\National Instruments\MeasurementStudioVS2022\DotNET\Assemblies\Current</_NIMeasurementStudioVs2022Current>
+    <_NIIviFx40>$(MSBuildProgramFiles32)\IVI Foundation\IVI\Microsoft.NET\Framework32\v4.0.30319</_NIIviFx40>
+    <_NIIviFx64>$(MSBuildProgramFiles32)\IVI Foundation\IVI\Microsoft.NET\Framework64\v4.0.30319</_NIIviFx64>
+    <_NILegacyDotNet40>$(MSBuildProgramFiles32)\National Instruments\Assemblies\DotNET40</_NILegacyDotNet40>
+  </PropertyGroup>
+
+  <!-- Root used for RFmx / NIRfsg / ModularInstruments / Ivi (same folder for all *.dll when possible) -->
+  <PropertyGroup>
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == '' and Exists('$(_NIMeasurementStudioVs2010Current)\NationalInstruments.RFmx.InstrMX.Fx40.dll')">$(_NIMeasurementStudioVs2010Current)</NIAssembliesRoot>
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == '' and Exists('$(_NIMeasurementStudioVs2019Current)\NationalInstruments.RFmx.InstrMX.Fx40.dll')">$(_NIMeasurementStudioVs2019Current)</NIAssembliesRoot>
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == '' and Exists('$(_NIMeasurementStudioVs2022Current)\NationalInstruments.RFmx.InstrMX.Fx40.dll')">$(_NIMeasurementStudioVs2022Current)</NIAssembliesRoot>
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == '' and Exists('$(_NIIviFx40)\NationalInstruments.RFmx.InstrMX.Fx40.dll')">$(_NIIviFx40)</NIAssembliesRoot>
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == '' and Exists('$(_NIIviFx64)\NationalInstruments.RFmx.InstrMX.Fx40.dll')">$(_NIIviFx64)</NIAssembliesRoot>
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == '' and Exists('$(_NILegacyDotNet40)\NationalInstruments.RFmx.InstrMX.Fx40.dll')">$(_NILegacyDotNet40)</NIAssembliesRoot>
+    <!-- Default: IVI path (typical for RFmx + RFSG Fx40 today) -->
+    <NIAssembliesRoot Condition="'$(NIAssembliesRoot)' == ''">$(_NIIviFx40)</NIAssembliesRoot>
+  </PropertyGroup>
+
+  <!-- NationalInstruments.Common: RFSG example uses MeasurementStudioVS2010\...\Current\NationalInstruments.Common.dll -->
+  <PropertyGroup>
+    <NICommonDllFullPath Condition="'$(NICommonDllFullPath)' == '' and Exists('$(_NIMeasurementStudioVs2010Current)\NationalInstruments.Common.dll')">$(_NIMeasurementStudioVs2010Current)\NationalInstruments.Common.dll</NICommonDllFullPath>
+    <NICommonDllFullPath Condition="'$(NICommonDllFullPath)' == '' and Exists('$(_NIMeasurementStudioVs2019Current)\NationalInstruments.Common.dll')">$(_NIMeasurementStudioVs2019Current)\NationalInstruments.Common.dll</NICommonDllFullPath>
+    <NICommonDllFullPath Condition="'$(NICommonDllFullPath)' == '' and Exists('$(_NIMeasurementStudioVs2022Current)\NationalInstruments.Common.dll')">$(_NIMeasurementStudioVs2022Current)\NationalInstruments.Common.dll</NICommonDllFullPath>
+    <NICommonDllFullPath Condition="'$(NICommonDllFullPath)' == '' and Exists('$(NIAssembliesRoot)\NationalInstruments.Common.dll')">$(NIAssembliesRoot)\NationalInstruments.Common.dll</NICommonDllFullPath>
+    <NICommonDllFullPath Condition="'$(NICommonDllFullPath)' == ''">$(_NIMeasurementStudioVs2010Current)\NationalInstruments.Common.dll</NICommonDllFullPath>
+  </PropertyGroup>
+</Project>

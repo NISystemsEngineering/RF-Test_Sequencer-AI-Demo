@@ -1,0 +1,50 @@
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.csproj.AssemblyReference.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.AssemblyInfoInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.AssemblyInfo.cs
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.csproj.CoreCompileInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.exe.config
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\Newtonsoft.Json.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.RFmx.WlanMX.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Core.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Instrument.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.RFmx.InstrMX.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsg.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.Common.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.Common.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Core.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Instrument.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsg.Fx40.xml
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.xml
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.Common.xml
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAm.6F1E3B2B.Up2Date
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.exe.config
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\Newtonsoft.Json.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Core.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Instrument.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.RFmx.InstrMX.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.RFmx.WlanMX.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.Common.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsg.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.Common.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Core.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\WlanRfAmpTest.Instrument.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsg.Fx40.xml
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.xml
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\bin\x64\Debug\net48\NationalInstruments.ModularInstruments.Common.xml
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.csproj.AssemblyReference.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.AssemblyInfoInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.AssemblyInfo.cs
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.csproj.CoreCompileInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAm.6F1E3B2B.Up2Date
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.ModuleRunner\obj\x64\Debug\net48\WlanRfAmpTest.ModuleRunner.pdb

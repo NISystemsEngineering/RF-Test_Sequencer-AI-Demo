@@ -1,0 +1,15 @@
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\x64\Release\net48\WlanRfAmpTest.Launcher.exe.config
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\x64\Release\net48\WlanRfAmpTest.Launcher.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\x64\Release\net48\WlanRfAmpTest.Launcher.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.csproj.AssemblyReference.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.AssemblyInfoInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.AssemblyInfo.cs
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.exe
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAmpTest.Launcher.exe.config
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\x64\Release\net48\Newtonsoft.Json.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\x64\Release\net48\WlanRfAmpTest.Core.dll
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\bin\x64\Release\net48\WlanRfAmpTest.Core.pdb
+C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\src\WlanRfAmpTest.Launcher\obj\x64\Release\net48\WlanRfAm.89C8FA76.Up2Date

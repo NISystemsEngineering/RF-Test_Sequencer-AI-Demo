@@ -1,0 +1,1739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><title> Report</title><style type="text/css">
+					body {font-family:VERDANA;color:#161617}
+					img {margin-right:5px;}
+					img.expandCollapseAll{width:26px; height:28px; border-style:none; cursor:pointer;}
+					img.expandCollapse{border-style:none; cursor:pointer}
+					table.uutTable{min-width: 30%; width: auto;font-size: 70%;}
+					table.uutTable td, th, tr{white-space:nowrap;padding:0.5em;vertical-align:text-top}
+					table.batchTable{width:80%;font-size: 70%;border-width:0.13em;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.batchTable td, th, tr{border-width:1px;border-style:solid;border-color:#D3D5D6;white-space:normal;padding:0.5em;vertical-align:text-top;border-collapse:collapse;}
+					table.uutHrefTable{width:80%;font-size: 70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.uutHrefTable td, th, tr{border-width:0.13em;border-color:silver;border-collapse:collapse;border-style:solid;padding:0.5em;text-align:center;}
+					table.stepTable{width:auto;max-width:95%;font-size:70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.stepTable td, th, tr{width:auto;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;padding:0.5em;text-align:left;}					
+					hr.headerSeparator{text-align:left;height:0px;width:90%;margin-left:0px;border: none; border-bottom: 1px solid #D3D5D6}
+					hr.uutSeparator{text-align:left;height:0px;width:90%;margin-left:0px;color:#D3D5D6; border: none; border-bottom: 1px solid rgb(174, 176, 179)}
+					hr.batchSeparator{text-align:center;height:1px;width:90%;}
+					table.criticalFailureTable{width:50%;font-size: 70%;border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.criticalFailureTable td, th{border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;white-space:nowrap;padding:0.4em;vertical-align:text-top;}
+					table.criticalFailureTable td {text-align:left;}
+					table.criticalFailureTable th {text-align:center;}
+					span.stepText{font-size:94%;}
+					tr.hidden{display:none;}
+					img{margin:0px;padding:0px;}
+					</style><script type="text/javascript">
+					//		
+					var gStylesheetpath = "";	
+					/** A function to initialize the global variable with the stylesheet path**/	
+					setStylesheetPath = function(path)
+					{
+						gStylesheetpath = path;
+					}	
+					/** A function to return the image path depending on whether the file was packed using the XMLPack utility.
+					**/	
+					getImageAbsolutePath = function(imageFileName)
+					{
+						var path ="";	
+						path = gStylesheetpath +  imageFileName;
+						return path;	
+					}
+
+					var gExpandCollapseState = "collapsed";
+
+					/** An array cache of all divs in HTML body, this will calculate all expand collapse divs once and 
+					 store in this global array so that performance is improved for expand/collapse actions from second time**/
+					var gExpandCollapseImagesArray; 
+
+
+					/**Apply Expand/Collapse functionality for image element, this will be called by onClick event of img element
+					**/
+					expandCollapse = function(event)
+					{
+						var imgElem = event.target || event.srcElement;			
+						expandCollapseImageDiv(imgElem);
+					}
+
+					/**Apply Expand/Collapse functionality for div element which contains imgElem
+						imgElem - DOM object of img element
+					**/
+					expandCollapseImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							if(expCollDiv.className == "expanded")
+							{
+								expCollDiv.className="collapsed";
+								expCollDiv.style.display="none";
+								imgName = imgName.replace("minus","plus");
+							}	
+							else
+							{
+								expCollDiv.className="expanded";
+								expCollDiv.style.display="block";
+								imgName = imgName.replace("plus","minus");
+							}	
+							imgElem.src=imgPath+imgName;
+						}
+					}
+
+					/**Change classname for DIV element, so that it is visible and expanded
+						imgElem - DOM object of img element
+					**/
+					expandImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							expCollDiv.className="expanded";
+							expCollDiv.style.display="block";
+							imgName = imgName.replace("plus","minus");					
+							imgElem.src=imgPath+imgName;
+						}
+					}
+					/**Change classname for DIV element, so that it is hidden and collapsed
+						imgElem - DOM object of img element
+					**/
+					collapseImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							expCollDiv.className="collapsed";
+							expCollDiv.style.display="none";
+							imgName = imgName.replace("minus","plus");	
+							imgElem.src=imgPath+imgName;
+						}
+					}
+					/**
+					* @constructor
+					*/
+					ImgCollection = function(imgArray) { this.imgArray= imgArray; 	this.state = "expanded"; };
+					
+					/** A High level expand/collapse function which will expand or collapse all the DIVs in HTML body 
+					**/
+					expandCollapseAll = function(event)
+					{
+						var rootImgElem = event.target || event.srcElement;		
+						var uniqueDivId = 	rootImgElem.className;
+						if(!gExpandCollapseImagesArray)
+						{
+							gExpandCollapseImagesArray =  new Array();
+						}						
+						if(!gExpandCollapseImagesArray[uniqueDivId])
+						{
+							var divElement = document.getElementById(uniqueDivId);						
+							gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+						}
+						var expandCollapseState = gExpandCollapseImagesArray[uniqueDivId].state;
+						var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+						if (expandCollapseState == "expanded")
+						{
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className == "trExpanded")
+									collapseTRImg(imgElem);
+								else
+									collapseImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("plus.png");
+							collapseImageDiv(rootImgElem);
+							expandCollapseState="collapsed";
+						}
+						else
+						{
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className == "trExpanded")
+									expandTRImg(imgElem);
+								else
+									expandImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("minus.png");
+							expandImageDiv(rootImgElem);
+							expandCollapseState="expanded";
+						}
+						gExpandCollapseImagesArray[uniqueDivId].state = expandCollapseState;
+					}
+					
+					/** A expand function to expand all divisions during PDF Generation
+					**/
+					expandAll = function()
+					{
+						if(!gExpandCollapseImagesArray)
+						{
+							gExpandCollapseImagesArray =  new Array();
+						}
+						
+						var imgElems = document.getElementsByTagName("img");
+						
+						for (var i=0; i<imgElems.length; ++i)
+						{
+							var uniqueDivId = imgElems[i].className;
+							if (uniqueDivId.startsWith("MainSequence_"))
+							{
+								if(!gExpandCollapseImagesArray[uniqueDivId])
+								{
+									var divElement = document.getElementById(uniqueDivId);						
+									gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+								}
+								
+								var expandCollapseState = imgElems[i].state;
+								var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+								
+								for(var j=0; j<expandCollapseImagesArray.length;++j)
+								{
+									var imgElem = expandCollapseImagesArray[j];
+									if (imgElem.className == "trExpanded")
+										expandTRImg(imgElem);
+									else
+										expandImageDiv(imgElem);
+								}
+								imgElems[i].src =getImageAbsolutePath("minus.png");
+								expandImageDiv(imgElems[i]);
+								expandCollapseState="expanded";
+								imgElems[i].state = expandCollapseState;
+								imgElems[i].alt = "";
+							}
+						}
+					}
+					
+					/** A High level expand function which will expand all the DIVs in HTML body 
+					**/
+					expandAllTables = function(event)
+					{
+						var anchorElement = event.target || event.srcElement;	
+						if (anchorElement)
+						{
+							var anchorHref = anchorElement.href;
+							var uniqueDivId = 	anchorElement.className;
+							var rootImgElem = document.getElementById(uniqueDivId +'img');	
+							if(!gExpandCollapseImagesArray)
+							{
+								gExpandCollapseImagesArray =  new Array();
+							}		
+							if(!gExpandCollapseImagesArray[uniqueDivId])
+							{
+								var divElement = document.getElementById(uniqueDivId);						
+								gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+							}
+							var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className != "trExpanded")
+									expandImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("minus.png");
+							expandImageDiv(rootImgElem);		
+							gExpandCollapseImagesArray[uniqueDivId].state = "expanded";
+							window.location.href = anchorHref; 
+						}
+							return false;
+					}	
+
+					expandTable = function(event)
+					{
+						var anchorElement = event.target || event.srcElement;		
+						var anchorHref = anchorElement.href;
+						var indexOfHash = anchorHref.lastIndexOf('#');
+						var id = anchorHref.substring(indexOfHash + 1);
+						var tableElement = document.getElementById(id);
+						var parentElement = tableElement.parentNode;
+						while(parentElement.tagName != "BODY")
+						{
+							if(parentElement.tagName=='DIV' && parentElement.className=='collapsed')
+							{
+								var imgElem = parentElement.parentNode.getElementsByTagName("IMG")[0];
+								var imgSrc = imgElem.src;
+								var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+								var imgPath = imgSrc.slice(0,indexOfLastSlash);
+								var imgName = imgSrc.slice(indexOfLastSlash);
+								parentElement.className="expanded";
+								imgName = imgName.replace("plus","minus");					
+								imgElem.src=imgPath+imgName;
+							}
+							parentElement = parentElement.parentNode;
+						}
+						window.location.href = anchorHref;
+						return false;
+					}
+					
+				/** Functions to expand collapse tr elements **/
+				var kExpandedState = 1;
+				var kCollapsedState = 0;
+				expandCollapseTR = function(event)
+				{
+					var imgElem = event.target || event.srcElement;			 
+					if (imgElem)
+					{
+						expandCollapseTRImg(imgElem);
+					}
+				}
+				expandCollapseTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						var expCollState = getStateFromTRElement(trElem);
+						if (expCollState == kCollapsedState)
+						{
+							expandNestedRows(trElem);
+							setStateOfTR(trElem, kExpandedState);
+							setImageToMinus(imgElem);
+						}
+						else if (expCollState == kExpandedState)
+						{
+							collapseNestedRows(trElem);
+							setStateOfTR(trElem, kCollapsedState);
+							setImageToPlus(imgElem);
+						}
+					}
+				}
+				expandTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						expandNestedRows(trElem);
+						setStateOfTR(trElem, kExpandedState);
+						setImageToMinus(imgElem)
+					}
+				}
+				collapseTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						collapseNestedRows(trElem);
+						setStateOfTR(trElem, kCollapsedState);
+						setImageToMinus(imgElem);
+					}
+				}
+				getStateFromTRElement = function(trElem)
+				{
+					var className = trElem.className;
+					var state = kExpandedState;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						state = parseInt(splitData[2].split(':')[1],10)
+					}
+					return state;
+				}
+				getLevelFromTRElement = function(trElem)
+				{
+					var className = trElem.className;
+					var level = -1;
+					var splitData = className.split(' ');
+					if(splitData.length >= 2)
+					{
+						level = parseInt(splitData[1].split(':')[1],10)
+					}
+					return level;
+				}
+				setVisibiltyOfTR = function(trElem, visibility)
+				{
+					var className = trElem.className;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						splitData[0] = visibility;
+						trElem.className = splitData.join(' ');
+					}					
+				}
+				setStateOfTR = function(trElem, state)
+				{
+					var className = trElem.className;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						splitData[2] = 'state:' + state;
+						trElem.className = splitData.join(' ');
+					}					
+				}
+				setImageToPlus = function(imgElem)
+				{
+					var imgSrc = imgElem.src;
+					var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+					var imgPath = imgSrc.slice(0,indexOfLastSlash);
+					var imgName = imgSrc.slice(indexOfLastSlash);
+					imgName = imgName.replace("minus","plus");
+					imgElem.src=imgPath+imgName;
+				}
+				setImageToMinus = function(imgElem)
+				{
+					var imgSrc = imgElem.src;
+					var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+					var imgPath = imgSrc.slice(0,indexOfLastSlash);
+					var imgName = imgSrc.slice(indexOfLastSlash);
+					imgName = imgName.replace("plus","minus");
+					imgElem.src=imgPath+imgName;
+				}
+				collapseNestedRows = function(trElem)
+				{					
+					var currLevel = getLevelFromTRElement(trElem);
+					trElem = trElem.nextSibling;
+					while (trElem)
+					{
+						if (trElem.nodeName == "TR" || trElem.nodeName == "tr")
+						{
+							var nextLevel = getLevelFromTRElement(trElem);
+							if (nextLevel > currLevel)
+								setVisibiltyOfTR(trElem, "hidden");
+							else
+								break;
+						}
+						trElem =  trElem.nextSibling;
+					}
+				}
+				expandNestedRows = function(trElem)
+				{
+					var currLevel = getLevelFromTRElement(trElem);
+					var makeVisible = true;
+					var level = -1;
+					trElem = trElem.nextSibling;
+					while (trElem)
+					{
+						if (trElem.nodeName == "TR" || trElem.nodeName == "tr")
+						{
+							var nextLevel = getLevelFromTRElement(trElem);
+							if (nextLevel > currLevel)
+							{
+								var state = getStateFromTRElement(trElem);
+								if (makeVisible == true)
+								{
+									if (state == kCollapsedState)
+									{
+										level = nextLevel;
+										makeVisible = false;
+									}
+									setVisibiltyOfTR(trElem, "visible");
+								}
+								else if(nextLevel <= level)
+								{
+									level = -1;
+									makeVisible = true;
+									if (state == kCollapsedState)
+									{
+										level = nextLevel;
+										makeVisible = false;
+									}
+									setVisibiltyOfTR(trElem, "visible");
+								}							 
+							}
+							else
+								break;
+						}
+						trElem = trElem.nextSibling;
+					}
+				}
+				//Perform any initialization in this method and add dynamic event handlers here	
+					init = function(path)
+					{																	
+						setStylesheetPath(path);
+					}
+						//</script>
+<link rel="stylesheet" href="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/TSGraphStyle.css" />
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/GraphDataLayout.js"></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/jquery/dist/jquery.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/lib/jquery.event.drag.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/lib/jquery.mousewheel.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/dist/es5/jquery.flot.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-cursors-plugin/dist/es5/jquery.flot.cursors.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-data-types/dist/es5-minified/ni-data-types.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-charting-plugin/dist/es5/jquery.flot.charting.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-intensitygraph-plugin/jquery.flot.intensitygraph.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/three/build/three.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-glplotter-plugin/jquery.flot.glplotter.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/webcomponents-lite/webcomponents-lite.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement-polyfills.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/element.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/webcharts.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts-legends/dist/es5-minified/webcharts-legends.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/element_registration.min.js" ></script>
+</head><body onload=" init('C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/');"><h2 style="font-weight:normal;">UUT REPORT</h2><table class="uutTable"><tr><td style="font-weight:normal;">STATION ID</td><td>FAE-SOCAL</td></tr><tr><td style="font-weight:normal;">SERIAL NUMBER</td><td>NONE</td></tr><tr><td style="font-weight:normal;">DATE</td><td>Wednesday, April 15, 2026</td></tr><tr><td style="font-weight:normal;">TIME</td><td>2:13:35 PM</td></tr><tr><td style="font-weight:normal;">OPERATOR</td><td>administrator</td></tr><tr><td style="font-weight:normal;">EXECUTION TIME</td><td>40.5949 seconds						
+						</td></tr><tr><td style="font-weight:normal;">NUMBER OF RESULTS</td><td>125</td></tr><tr><td style="font-weight:normal;">UUT RESULT</td><td style="color:#FF0000;">Failed</td></tr></table><br><br><table class="criticalFailureTable"><tr><th colspan="3">FAILURE CHAIN</th></tr><tr><th>STEP</th><th>SEQUENCE</th><th>SEQUENCE FILE</th></tr><tr><td><a href="#ResultId13" onclick="expandAllTables(event);" class="IDOLXHIGCROFLQGDFEIXN4VNBTZIKZIBYA3M5W4LJWXWCHO5UIFMGE">Log point to CSV — aggregate pass (.NET)</a></td><td>MainSequence</td><td>WlanRfAmpTest_Bundle.seq</td></tr></table><br><hr class="headerSeparator"><span style="font-size:70%;font-weight:normal;"><img onclick="expandCollapseAll(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="MainSequence_IDOLXHIGCROFLQGDFEIXN4VNBTZIKZIBYA3M5W4LJWXWCHO5UIFMGE" id="MainSequence_IDOLXHIGCROFLQGDFEIXN4VNBTZIKZIBYA3M5W4LJWXWCHO5UIFMGEimg"/>
+				Expand / Collapse MainSequence
+				</span><br><br><div class="expanded" id="MainSequence_IDOLXHIGCROFLQGDFEIXN4VNBTZIKZIBYA3M5W4LJWXWCHO5UIFMGE"><span style="margin-left:20px;font-size:70%;font-weight:normal;">
+			Begin Sequence: MainSequence
+			</span><br><span style="margin-left:20px;font-size:70%;font-weight:normal;">C:\Users\Chinmoyee\Projects\WlanRfAmpVstTest - TestStand\seq\WlanRfAmpTest_Bundle.seq</span><br><br><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId4"></a>Prepare WLAN sweep (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId5"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDPZKURZLMTZGAGXNDBK1UJQNBRKGUP5HTEVIW0WJJ0G1PIF1IO1NM"/>For each band{0}&nbsp;Locals.BandIdx&nbsp;=&nbsp;0;&nbsp;Locals.BandIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BandCount;&nbsp;Locals.BandIdx&nbsp;=&nbsp;Locals.BandIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDPZKURZLMTZGAGXNDBK1UJQNBRKGUP5HTEVIW0WJJ0G1PIF1IO1NM"><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDFTL1MPKLPTVDIEYIBEIZE3UA0SSTOTJV5QH3AMX45T3SHA2MGMD"/>For each center frequency{0}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDFTL1MPKLPTVDIEYIBEIZE3UA0SSTOTJV5QH3AMX45T3SHA2MGMD"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId7"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDR0ZGODJUVADZJFZAI1BOUBHDPP4W3FBPEO1SHYIO5DANCRTLCAUP"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDR0ZGODJUVADZJFZAI1BOUBHDPP4W3FBPEO1SHYIO5DANCRTLCAUP"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId8"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDS0EWPYZPH41ZDFA0AHQLRKZA0HWPZLZIIXYRV3OPA1TUTOWVURFE"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDS0EWPYZPH41ZDFA0AHQLRKZA0HWPZLZIIXYRV3OPA1TUTOWVURFE"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId9"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId10"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId11"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId12"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId13"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;"><b>Failed</b></td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId14"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId17"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId20"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId21"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID5ADRI4AFQUZAKW023EEBSMLS0LNXUU5N2512CUGWW2PDPQDMMZHF"/>For each center frequency{1}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID5ADRI4AFQUZAKW023EEBSMLS0LNXUU5N2512CUGWW2PDPQDMMZHF"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId22"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDSHQGYJRQBYNAG1M22ZWO5MCSUC5A12E13H4UBRGKE2UVJ5KL1GUG"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDSHQGYJRQBYNAG1M22ZWO5MCSUC5A12E13H4UBRGKE2UVJ5KL1GUG"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId23"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDT0KCLKOBZHEHHJAUPO43OIGGENPFO4DRNGFOD4NO1IANMSFNHPKH"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDT0KCLKOBZHEHHJAUPO43OIGGENPFO4DRNGFOD4NO1IANMSFNHPKH"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId24"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId25"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId26"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId27"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId28"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId29"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId32"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId35"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId36"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID5WTS5BD4OLIJ4DBOKPRAI0W0C25EKYEPNAW5ZI32DGXGYGH4OON"/>For each center frequency{2}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID5WTS5BD4OLIJ4DBOKPRAI0W0C25EKYEPNAW5ZI32DGXGYGH4OON"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId37"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDRZNWXFYNTIGOBYNMZUXHZEKSVDQMFXSHHITZZDIOXO23CMAVA00O"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDRZNWXFYNTIGOBYNMZUXHZEKSVDQMFXSHHITZZDIOXO23CMAVA00O"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId38"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID2Y2OFLYNQ5CDHQQZSP5V4PIA3PK4FTJMEUUVRXC5ZPF4KSI2OS3O"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID2Y2OFLYNQ5CDHQQZSP5V4PIA3PK4FTJMEUUVRXC5ZPF4KSI2OS3O"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId39"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId40"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId41"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId42"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId43"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId44"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId47"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId50"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId51"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDNV1LJNAG5KQGWZQANG203V1DNVFS0OYZOORFBHA1B51N52PLBXL"/>For each center frequency{3}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDNV1LJNAG5KQGWZQANG203V1DNVFS0OYZOORFBHA1B51N52PLBXL"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId52"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID24KOYF1BPLYZH1RQZDBCNMOCOVI0WOXSEG3HXNTTPGNXYQ02HOH"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID24KOYF1BPLYZH1RQZDBCNMOCOVI0WOXSEG3HXNTTPGNXYQ02HOH"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId53"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDFFDNGZM0G25VFSEKKHNW10M2GFEMBFUSHURDSLNHUS1LSKU4UG4M"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDFFDNGZM0G25VFSEKKHNW10M2GFEMBFUSHURDSLNHUS1LSKU4UG4M"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId54"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId55"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId56"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId57"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId58"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId59"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId62"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId65"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId66"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDEGLW0S5MBAC1D34G1VPRN1XG5DWGGAQ5RBH2YWGVFVXDXGQULUJP"/>For each center frequency{4}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDEGLW0S5MBAC1D34G1VPRN1XG5DWGGAQ5RBH2YWGVFVXDXGQULUJP"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId67"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID0ZDKJ45GGAQDJR4DZKOV5YFWUGDALANE2VUQOMBE2W5Q0C3RVE3"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID0ZDKJ45GGAQDJR4DZKOV5YFWUGDALANE2VUQOMBE2W5Q0C3RVE3"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId68"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID4E4D2YXCPVASNIJWBZ1LCQJRHJS0FBWHGEQX5TBMNUMWZQHXPJVH"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID4E4D2YXCPVASNIJWBZ1LCQJRHJS0FBWHGEQX5TBMNUMWZQHXPJVH"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId69"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId70"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId71"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId72"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId73"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId74"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId77"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId80"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId81"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDJOMB25ZSV5IYN3FUABK3ORUFGDO5Q4NMLVH4HROVHAQJ3EU1OOZN"/>For each center frequency{5}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDJOMB25ZSV5IYN3FUABK3ORUFGDO5Q4NMLVH4HROVHAQJ3EU1OOZN"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId82"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDRW1CRT3LKDJNNDOFRL0PUZKYQCJFL4YSBOHUZXEFL4LECB4NIS2B"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDRW1CRT3LKDJNNDOFRL0PUZKYQCJFL4YSBOHUZXEFL4LECB4NIS2B"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId83"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDFOT4BROJ11MVMWGMQP51P1WFJDFOWZXQGGN5IHHF053TEK40CRFI"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDFOT4BROJ11MVMWGMQP51P1WFJDFOWZXQGGN5IHHF053TEK40CRFI"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId84"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId85"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId86"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId87"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId88"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId89"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId92"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId95"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId96"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID0F3PY1TGNRW5B5AX3FUTLDFSFOA4YC1ZPTK45SO45P0VIHKJUZ4C"/>For each center frequency{6}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID0F3PY1TGNRW5B5AX3FUTLDFSFOA4YC1ZPTK45SO45P0VIHKJUZ4C"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId97"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDL5K3S2OI0REFEYZ4YPZDAYIJCEJ1ZHCXGIHKRPQ1WPJN3K55HMM"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDL5K3S2OI0REFEYZ4YPZDAYIJCEJ1ZHCXGIHKRPQ1WPJN3K55HMM"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId98"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDLNV4AWHZ5HMIH5A5JC410SJBVP1POQCWPTVDIHB1HLVJVROOEXDF"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDLNV4AWHZ5HMIH5A5JC410SJBVP1POQCWPTVDIHB1HLVJVROOEXDF"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId99"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId100"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId101"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId102"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId103"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId104"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId107"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId110"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId111"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDCOMKTFY1SVPAHOS13MBKAWVLYENH2XUM05TRXIBKAXRNBXDSGVVO"/>For each center frequency{7}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDCOMKTFY1SVPAHOS13MBKAWVLYENH2XUM05TRXIBKAXRNBXDSGVVO"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId112"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID0BKNADO3BOFUM513L2EGL0HJ4EWL0AMXNIDMWOPXN5GUFVJ1QFIK"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID0BKNADO3BOFUM513L2EGL0HJ4EWL0AMXNIDMWOPXN5GUFVJ1QFIK"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId113"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDELI0VRBKCKJXLS51C5CRBARPBCQSENHJ13HMKJJ4HJWJSRSQ0ZVJ"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDELI0VRBKCKJXLS51C5CRBARPBCQSENHJ13HMKJJ4HJWJSRSQ0ZVJ"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId114"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId116"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId117"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId118"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId119"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId122"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId125"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId126"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDOB2JZI1SZVTKONODWF3XWLUB0BFG2PCKMGUEQJXXNI3ZYMUHFEP"/>For each center frequency{8}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDOB2JZI1SZVTKONODWF3XWLUB0BFG2PCKMGUEQJXXNI3ZYMUHFEP"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId127"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID2PWJYYE3MS5CINTDWNG5L01FFG1QOHILS2APOHDPKXBWZTSGT4TJ"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID2PWJYYE3MS5CINTDWNG5L01FFG1QOHILS2APOHDPKXBWZTSGT4TJ"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId128"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDSY5JKHR2R03FJUM32E3VXQ4F4JHK40ZV3SEWKAIUKUEA5JFIK4DE"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDSY5JKHR2R03FJUM32E3VXQ4F4JHK40ZV3SEWKAIUKUEA5JFIK4DE"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId129"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId130"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId131"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId132"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId133"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId134"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId137"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId140"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId141"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDDYV3QGU3HFTIH01QP0JJFCT2RP4WMHTGZCLPL4C0JVQQRINGHBRB"/>For each center frequency{9}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDDYV3QGU3HFTIH01QP0JJFCT2RP4WMHTGZCLPL4C0JVQQRINGHBRB"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId142"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDAJJHDLG55F5WOICMUSPCP2QIUM5ZKBYVGMBKNZLPLD04AYTF2DRM"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDAJJHDLG55F5WOICMUSPCP2QIUM5ZKBYVGMBKNZLPLD04AYTF2DRM"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId143"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDGS2UEEZLXQZOKSWP30OW2UEN0BBFWAXCFAVZVPBH2M4AHYRWN4ZC"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDGS2UEEZLXQZOKSWP30OW2UEN0BBFWAXCFAVZVPBH2M4AHYRWN4ZC"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId144"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId145"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId146"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId147"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId148"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId149"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId152"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId155"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId156"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDLZQUBLPPIXSWKQ2PY5C5FKJZRD30TZMOMBSJKZCHT4SGVSLGZPLI"/>For each center frequency{10}&nbsp;Locals.FreqIdx&nbsp;=&nbsp;0;&nbsp;Locals.FreqIdx&nbsp;&lt;&nbsp;(Locals.BandIdx&nbsp;==&nbsp;0&nbsp;?&nbsp;Parameters.Wlan_FreqCountBand0&nbsp;:&nbsp;Parameters.Wlan_FreqCountBand1);&nbsp;Locals.FreqIdx&nbsp;=&nbsp;Locals.FreqIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDLZQUBLPPIXSWKQ2PY5C5FKJZRD30TZMOMBSJKZCHT4SGVSLGZPLI"><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId157"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDE0IOAMEK2KOYKC04CCVB4VZ4TNTSWA0W3LKPW0FJZKFFDQ0B3CJG"/>For each WLAN standard{0}&nbsp;Locals.StdIdx&nbsp;=&nbsp;0;&nbsp;Locals.StdIdx&nbsp;&lt;&nbsp;Parameters.Wlan_StdCount;&nbsp;Locals.StdIdx&nbsp;=&nbsp;Locals.StdIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDE0IOAMEK2KOYKC04CCVB4VZ4TNTSWA0W3LKPW0FJZKFFDQ0B3CJG"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId158"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDSFB1HE43FZGCEYNRO4UWSEJ03N3FMNQ111XN53IPRENBUMGS14BJ"/>For each channel bandwidth{0}&nbsp;Locals.BwIdx&nbsp;=&nbsp;0;&nbsp;Locals.BwIdx&nbsp;&lt;&nbsp;Parameters.Wlan_BwCount;&nbsp;Locals.BwIdx&nbsp;=&nbsp;Locals.BwIdx&nbsp;+&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDSFB1HE43FZGCEYNRO4UWSEJ03N3FMNQ111XN53IPRENBUMGS14BJ"><table  class="stepTable" style="margin-left:180px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId159"></a>Sync point from loop indices (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId160"></a>Measure EVM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-200</td><td style="text-align:right;">100</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId161"></a>Measure TxP (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dBm</td><td></td><td style="text-align:right;">-150</td><td style="text-align:right;">80</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId162"></a>Measure SEM (.NET)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0</td><td>dB</td><td></td><td style="text-align:right;">-500</td><td style="text-align:right;">500</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId163"></a>Log point to CSV — aggregate pass (.NET)</td><td style="color:#FF0000;text-align:center;">Failed</td><td style="text-align:right;">0</td><td></td><td></td><td style="text-align:right;">0.5</td><td style="text-align:right;">1.5</td><td style="text-align:center;">GELE(>= <=)</td></tr></table></div><br><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId164"></a>(For&nbsp;each&nbsp;channel&nbsp;bandwidth)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId167"></a>(For&nbsp;each&nbsp;WLAN&nbsp;standard)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId170"></a>(For&nbsp;each&nbsp;center&nbsp;frequency)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId173"></a>(For&nbsp;each&nbsp;band)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId176"></a>Finish WLAN sweep (.NET)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:20px;font-size:70%;font-weight:normal;">
+							
+			End Sequence: MainSequence
+			</span></div><h2 style="font-weight:normal;">END UUT REPORT</h2><hr class="uutSeparator"><script type="text/javascript">
+					try {
+						window.cefQuery({
+							request: 'Expand',
+							onSuccess: function(response) {
+							  expandAll();
+							},
+							onFailure: function(error_code, error_message) {expandAll();}
+						});
+						expandAll();
+					}
+					catch (err) {
+						// Do nothing
+					}
+				</script></body></html>
