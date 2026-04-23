@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "name": "rfmx-rfsg-copilot-context",
+  "description": "Folder context collected from prior RFmx/RFSG agent transcripts.",
+  "folders": [
+    {
+      "path": "C:\\Users\\Public\\Documents\\National Instruments\\NI-RFmx\\WLAN\\Examples\\DotNET\\VS2010",
+      "label": "NI RFmx WLAN .NET reference examples"
+    },
+    {
+      "path": "C:\\Users\\Public\\Documents\\National Instruments\\NI-RFSG Playback Library\\Examples\\DotNET\\VS2010",
+      "label": "NI RFSG Playback .NET reference examples"
+    },
+	{
+      "path": "C:\\Users\\Public\\Documents\\National Instruments\\NI-RFSG\\Examples\\VS2012",
+      "label": "NI RFSG .NET reference examples"
+    },
+	{
+      "path": "C:\\Users\\Public\\Documents\\National Instruments\\NI-RFmx\\SpecAn\\Examples\\DotNET\\VS2010",
+      "label": "NI RFmx SpecAn reference examples"
+    },
+	{
+      "path": "./.github/copilot/docs",
+      "label": "NI Technical Documents"
+    },
+  ]
+}
