@@ -129,6 +129,15 @@ The smart updater defaults to known-stable v23.8 configuration to avoid version 
 
 ---
 
+## Additional Resources
+
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Command cheat sheet
+- **[README.md](README.md)** - Complete tool documentation
+- **[../docs/SETUP_NEW_MACHINE.md](../docs/SETUP_NEW_MACHINE.md)** - Detailed setup guide
+- **[../docs/GIT_SAFETY_GUIDE.md](../docs/GIT_SAFETY_GUIDE.md)** - Protect your work from git accidents
+
+---
+
 ## Need More Help?
 
 - **Detailed Documentation:** See `build-tools/README.md`

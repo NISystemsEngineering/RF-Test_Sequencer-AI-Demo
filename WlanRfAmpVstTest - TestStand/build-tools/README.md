@@ -290,6 +290,21 @@ To improve these tools:
 
 These scripts are part of the RF Test Sequencer project. Use and modify as needed for your development environment.
 
+## Related Documentation
+
+### For Developers
+- **[QUICKSTART.md](QUICKSTART.md)** - 3-step quick start for first-time setup
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - One-page command cheat sheet
+- **[../docs/SETUP_NEW_MACHINE.md](../docs/SETUP_NEW_MACHINE.md)** - Detailed onboarding guide
+- **[../docs/GIT_SAFETY_GUIDE.md](../docs/GIT_SAFETY_GUIDE.md)** - Git best practices
+
+### For AI Assistants
+- **[../.copilot/skills/dependency-management.md](../.copilot/skills/dependency-management.md)** - Complete technical skill
+- **[../.copilot/skills/dependency-status.md](../.copilot/skills/dependency-status.md)** - Current project state
+- **[../.copilot/README.md](../.copilot/README.md)** - AI skills index
+
+---
+
 ## Support
 
 For issues related to:
