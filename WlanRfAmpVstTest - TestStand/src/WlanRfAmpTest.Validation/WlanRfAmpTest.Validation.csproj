@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
@@ -15,7 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="NationalInstruments.RFmx.WlanMX.Fx40">
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.RFmx.WlanMX.Fx40\v4.0_25.5.0.49283__dc6ad606294fc298\NationalInstruments.RFmx.WlanMX.Fx40.dll</HintPath>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.RFmx.WlanMX.Fx40\v4.0_23.8.0.49286__dc6ad606294fc298\NationalInstruments.RFmx.WlanMX.Fx40.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

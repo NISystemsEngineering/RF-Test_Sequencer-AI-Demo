@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
@@ -12,28 +12,28 @@
   <ItemGroup>
     <ProjectReference Include="..\WlanRfAmpTest.Core\WlanRfAmpTest.Core.csproj" />
   </ItemGroup>
-  <!-- Hint paths from $(NIAssembliesRoot); see ..\..\Directory.Build.props (IVI vs legacy NI folder). -->
+  <!-- National Instruments assemblies - resolved from installed NI drivers (v23.x) -->
   <ItemGroup>
     <Reference Include="Ivi.Driver">
-      <HintPath>..\..\..\..\..\..\Program Files\IVI Foundation\IVI\Microsoft.NET\Framework64\v2.0.50727\IviFoundationSharedComponents 2.0.0\Ivi.Driver.dll</HintPath>
+      <HintPath>C:\Program Files\IVI Foundation\IVI\Microsoft.NET\Framework64\v2.0.50727\IviFoundationSharedComponents 2.0.0\Ivi.Driver.dll</HintPath>
     </Reference>
     <Reference Include="NationalInstruments.Common">
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.Common\v4.0_19.1.40.49152__dc6ad606294fc298\NationalInstruments.Common.dll</HintPath>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.Common\v4.0_19.1.40.49152__dc6ad606294fc298\NationalInstruments.Common.dll</HintPath>
     </Reference>
     <Reference Include="NationalInstruments.ModularInstruments.Common">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32\v4.0.30319\NationalInstruments.ModularInstruments.Common 25.5.0\NationalInstruments.ModularInstruments.Common.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32\v4.0.30319\NationalInstruments.ModularInstruments.Common 23.0.0\NationalInstruments.ModularInstruments.Common.dll</HintPath>
     </Reference>
     <Reference Include="NationalInstruments.ModularInstruments.NIRfsg.Fx40">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32\v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 25.5.0\NationalInstruments.ModularInstruments.NIRfsg.Fx40.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32\v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 23.0.0\NationalInstruments.ModularInstruments.NIRfsg.Fx40.dll</HintPath>
     </Reference>
     <Reference Include="NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\26.0.0.49263\NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40.dll</HintPath>
     </Reference>
     <Reference Include="NationalInstruments.RFmx.InstrMX.Fx40">
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.RFmx.InstrMX.Fx40\v4.0_25.5.0.49283__dc6ad606294fc298\NationalInstruments.RFmx.InstrMX.Fx40.dll</HintPath>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.RFmx.InstrMX.Fx40\v4.0_23.8.0.49286__dc6ad606294fc298\NationalInstruments.RFmx.InstrMX.Fx40.dll</HintPath>
     </Reference>
     <Reference Include="NationalInstruments.RFmx.WlanMX.Fx40">
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.RFmx.WlanMX.Fx40\v4.0_25.5.0.49283__dc6ad606294fc298\NationalInstruments.RFmx.WlanMX.Fx40.dll</HintPath>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.RFmx.WlanMX.Fx40\v4.0_23.8.0.49286__dc6ad606294fc298\NationalInstruments.RFmx.WlanMX.Fx40.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
