@@ -1,0 +1,20 @@
+# Ignore auto-loaded Copilot skills
+# Only custom, project-specific skills should be tracked
+
+# Auto-loaded skills (will regenerate automatically)
+measurement-plugin/
+ni-datastore-query-odata/
+ni-dependency-management/
+ni-hw-drivers/
+ni-hw-drivers-csharp/
+ni-measurement-data-services/
+teststand-api/
+teststand-grpc/
+
+# But DO track custom skills
+# Currently: nisyscfg-equipment-discovery/ is custom and tracked
+!nisyscfg-equipment-discovery/
+
+# Track this README and .gitignore
+!README.md
+!.gitignore
