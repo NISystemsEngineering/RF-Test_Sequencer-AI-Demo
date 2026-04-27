@@ -4,20 +4,26 @@ This directory (`.agents/skills/`) is configured to use skills from the git subm
 
 ## Current Configuration
 
-### Skills Source: Git Submodule
-All skills are now sourced from: `../../Skills_Dev_NICon-2026/.agents/skills/`
+### Skills Source: Git Submodule (Exclusive)
+**All skills are now sourced exclusively from:** `../../Skills_Dev_NICon-2026/.agents/skills/`
 
 This provides:
 - ✅ Version control for all skills
 - ✅ Team synchronization
 - ✅ Ability to update skills independently
 - ✅ Consistent skill versions across projects
+- ✅ Single source of truth for all skills
 
 ### Custom Local Skills
 
-Only custom, project-specific skills should remain in this directory:
+**Currently:** No custom local skills.  
+**All 9 skills are used from the submodule.**
 
-- **`nisyscfg-equipment-discovery/`** - Enhanced with project-specific error handling patterns
+If you need to add project-specific custom skills:
+1. Create a new folder in this directory
+2. Add your `SKILL.md` file
+3. Update `.gitignore` to exclude it from ignore list
+4. Commit to this repository
 
 ## Available Skills from Submodule
 
@@ -79,13 +85,14 @@ When a skill exists in both locations:
 ✅ **Version Control** - Skills are tracked and can be rolled back  
 ✅ **Collaboration** - Team can contribute to shared skills repository  
 
-## Current Setup (2026-04-24)
+## Current Setup (2026-04-24 - Updated)
 
-- ✅ Auto-loaded skills removed from local folder
-- ✅ Custom `nisyscfg-equipment-discovery` skill retained
+- ✅ All auto-loaded skills removed from local folder
+- ✅ Custom `nisyscfg-equipment-discovery` skill removed (using submodule version)
+- ✅ **All 9 skills now exclusively from submodule**
 - ✅ Submodule provides 9 shared skills
 - ✅ Configuration documented
-- ✅ .gitignore configured to block auto-loaded skills
+- ✅ .gitignore configured to block all auto-loaded skills
 
 ---
 
